@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video3", "video3.csproj", "{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video3.Player", "video3.Player.csproj", "{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video3.Editor", "video3.Editor.csproj", "{3A2B3C92-FE79-C6B0-F07E-6303E038BA99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BD1EEE-A645-ED1F-7CFE-EB4FCCE22257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2B3C92-FE79-C6B0-F07E-6303E038BA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2B3C92-FE79-C6B0-F07E-6303E038BA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2B3C92-FE79-C6B0-F07E-6303E038BA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2B3C92-FE79-C6B0-F07E-6303E038BA99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
