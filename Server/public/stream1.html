@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> Document</title>
+		<script src = "https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type = "text/javascript" src = "socket.io.js"></script>
+	</head>
+	
+	<body>
+		
+		<video src="" id="video" style="width:340px;height:160px;" autoplay = "true"> </video>
+		
+		<canvas id="preview"> </canvas>
+		<div id="logger"> </div>
+		
+		<div id="viewlogger">
+		
+		</div>
+		
+		<img id="play" style="width:460px;height:400px;" />
+		
+		<img id="play2" style="width:460px;height:400px;" />
+		<script type ="text/javascript">
+			var canvas = document.getElementById("preview");
+			var context = canvas.getContext("2d");
+			var img = document.getElementById("play");
+			canvas.width = 300;
+			canvas.height = 200;
+			context.width = canvas.width;
+			context.height = canvas.height;
+			
+			var video = document.getElementById("video");
+			var socket = io();
+			console.log(socket);
+			
+			function logger(msg){
+				$("#logger").text(msg);
+			
+			}
+			
+			function loadCam(stream){
+				video.src = window.URL.createObjectURL(stream);
+				logger('Camera OK');
+			}
+			
+			function loadFail(){
+			
+				logger('Camera no connect');
+			}
+			
+			function viewVideo(video,context){
+			
+				context.drawImage(video,0,0,context.width,context.height);
+				
+				//img.src = canvas.toDataURL('image/webp');
+				//var sendtext = $("#viewlogger").text(canvas.toDataURL('image/webp'));	
+				socket.emit('stream2',{data:canvas.toDataURL('image/jpeg')});				
+				//socket.emit('stream2',canvas.toDataURL('image/jpeg'));
+				//socket.emit('stream',"abcadasdasd");
+				//socket.emit("abcadasdasd123");
+			}
+			
+			$(function(){
+				navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+				if(navigator.getUserMedia){
+				
+					navigator.getUserMedia({video : true},loadCam,loadFail);
+				}
+				setInterval(function(){
+					viewVideo(video,context);
+				
+				},100);
+		
+
+			});
+			
+			var socket = io();
+			socket.on('stream2',function(image){
+				var img = document.getElementById("play");
+				//console.log(image.data.data);
+				img.src = image.data.data;
+				//$("#logger").text(image);
+			
+			
+			});
+			socket.on('stream1',function(image){
+				var img = document.getElementById("play2");
+				//console.log(image.data.data);
+				img.src = image.data.data;
+				//$("#logger").text(image);
+			
+			
+			});
+		
+		</script>
+	</body>
+</html>

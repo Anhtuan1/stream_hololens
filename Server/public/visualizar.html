@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> View</title>
+		<script src = "https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type = "text/javascript" src = "socket.io.js"></script>
+	</head>
+	
+	<body>
+		<img id="play" style="width:460px;height:400px;" />
+		<img id="play2" style="width:460px;height:400px;" />
+		<div id="logger">
+		
+		</div>
+		
+		<script>
+			var socket = io();
+			socket.on('stream2',function(image){
+				var img = document.getElementById("play");
+				//console.log(image.data.data);
+				img.src = image.data.data;
+				//$("#logger").text(image);
+			
+			
+			});
+			socket.on('stream1',function(image){
+				var img = document.getElementById("play2");
+				//console.log(image.data.data);
+				img.src = image.data.data;
+				//$("#logger").text(image);
+			
+			
+			});
+		
+		</script>
+	</body>
+	
+</html>

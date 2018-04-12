@@ -1,0 +1,31 @@
+var express = require("express");
+var app = new express();
+var http = require("http").Server(app);
+
+var io = require('socket.io')({
+	transports: ['websocket']
+},http);
+
+var Log = require('log'),
+	log = new Log('debug')
+
+var port = process.env.PORT || 3002;
+app.get('/', function(req,res){
+	//res.redirect('index.html');
+	//res.send("YOU ARE CONNECT");
+	
+});
+io.on('connection', function(socket){
+	socket.emit('may da connect');
+	socket.on('beep', function(){
+		socket.emit('boop');
+	});
+	socket.on('message',function(e){		
+		socket.emit('tao vua nhan duoc tin nhan cua may voi noi dung la '+e);
+	});
+})
+
+http.listen(port, function(){
+	//log.info('Server %s',port);
+	
+});

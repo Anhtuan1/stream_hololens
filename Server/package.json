@@ -1,0 +1,17 @@
+{
+  "name": "ttt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "beep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "package.json": "^2.0.1",
+    "socket.io": "*",
+    "express": "*",
+	"log": "*"
+  }
+}
